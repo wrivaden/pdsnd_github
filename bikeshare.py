@@ -24,6 +24,8 @@ def get_filters():
     
     #list to validate the input from user against these city names.
     city_list = ['chicago', 'new york city', 'washington'] 
+    month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+    day_list = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all']
     
     #Used stack overflow to be able to validate user inputs 
     while True:
@@ -45,7 +47,7 @@ def get_filters():
     if filter_mon_day == "month":
         while True:
             month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
-            if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            if month not in month_list:
                 print("This is not a valid month. Please enter: January, February, March, April, May or June or all")  
             else:
                 break
@@ -58,7 +60,7 @@ def get_filters():
         month = "all"
         while True:
             day = input("Enter a valid day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all: ").lower()
-            if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all'):
+            if day not in day_list:
                 print("This is not a valid day. Please enter: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all")
             else:
                 break
@@ -71,14 +73,14 @@ def get_filters():
         #month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
         while True:
             month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
-            if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            if month not in month_list:
                 print("This is not a valid month. Please enter: January, February, March, April, May or June or all") 
             else:
                 break
                 
         while True:
             day = input("Enter a valid day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all: ").lower()
-            if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all'):
+            if day not in day_list:
                 print("This is not a valid day. Please enter: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all")
             else:
                 break        
