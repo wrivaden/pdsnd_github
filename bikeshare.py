@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 
 #testin these files in my local environment
-CITY_DATA = { 'chicago': 'C:/python_scripts/chicago.csv',
-              'new york city': 'new_york_city.csv',
-             'washington': 'C:/python_scripts/washington.csv' }
-#CITY_DATA = { 'chicago': 'chicago.csv',
+#CITY_DATA = { 'chicago': 'C:/python_scripts/chicago.csv',
 #              'new york city': 'new_york_city.csv',
-#              'washington': 'washington.csv' }
+#            'washington': 'C:/python_scripts/washington.csv' }
+CITY_DATA = { 'chicago': 'chicago.csv',
+              'new york city': 'new_york_city.csv',
+              'washington': 'washington.csv' }
 
 def get_filters():
     """
@@ -24,6 +24,8 @@ def get_filters():
     
     #list to validate the input from user against these city names.
     city_list = ['chicago', 'new york city', 'washington'] 
+    month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+    day_list = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all']
     
     #Used stack overflow to be able to validate user inputs 
     while True:
@@ -45,7 +47,7 @@ def get_filters():
     if filter_mon_day == "month":
         while True:
             month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
-            if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            if month not in month_list:
                 print("This is not a valid month. Please enter: January, February, March, April, May or June or all")  
             else:
                 break
@@ -58,7 +60,7 @@ def get_filters():
         month = "all"
         while True:
             day = input("Enter a valid day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all: ").lower()
-            if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all'):
+            if day not in day_list:
                 print("This is not a valid day. Please enter: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all")
             else:
                 break
@@ -71,14 +73,14 @@ def get_filters():
         #month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
         while True:
             month = input("Enter a valid month: January, February, March, April, May or June or all: ").lower()
-            if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
+            if month not in month_list:
                 print("This is not a valid month. Please enter: January, February, March, April, May or June or all") 
             else:
                 break
                 
         while True:
             day = input("Enter a valid day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all: ").lower()
-            if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday', 'all'):
+            if day not in day_list:
                 print("This is not a valid day. Please enter: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday or all")
             else:
                 break        
@@ -129,9 +131,9 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """
-    Displays statistics on the most frequent times of travel.
-        
+
+    """Displays statistics on the most frequent times of travel.
+    
     Args:
         (df) - dataframe
     
@@ -167,13 +169,14 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """
-    Displays statistics on the most popular stations and trip.
+
+    """Displays statistics on the most popular stations and trip.
     
     Args:
         (df) - dataframe
     
     """
+
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -198,13 +201,14 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """
-    Displays statistics on the total and average trip duration.
+
+    """Displays statistics on the total and average trip duration.
     
     Args:
         (df) - dataframe
-        
+    
     """
+
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -222,8 +226,8 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """
-    Displays statistics on bikeshare users.
+
+    """Displays statistics on bikeshare users.
     
     Args:
         (df) - dataframe
