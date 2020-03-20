@@ -2,7 +2,7 @@
 This  README file was created on March 20, 2020 by Wendy Rivadeneira
 
 ### Project Title
-# Bike Share Use Data
+## Bike Share Use Data
 
 ### Description
 > The Bike Share project calculates statistics about usage patterns for three main cities: New York City, Chicago and Washington DC.
@@ -52,7 +52,7 @@ The CSV files contain usage data and the bikeshare.py contains the code to execu
 * chicago.csv
 * washington.csv
 * new_york_city.csv
-* bikeshare.py (contains the code to execute the statistics)
+* bikeshare.py (contains the code to execute the statistics calculations)
 
 ### Credits
 > Some of the code to validate user input using the while loop was obtained from examples in Stack Overflow.
