@@ -60,7 +60,8 @@ In the __main()__  function, after all these statistics are displayed, the user 
 
 ### Software installations
 Install this software applications in your local machine to run the bikeshare.py application:
-		* Anaconda/Python 3.7 version. [Click here](https://www.anaconda.com/distribution/#windows).
+
+* Anaconda/Python 3.7 version. [Click here](https://www.anaconda.com/distribution/#windows).
 
 ### Files used
 The CSV files contain usage data and the bikeshare.py contains the python code to execute the program.
